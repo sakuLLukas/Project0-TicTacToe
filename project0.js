@@ -107,5 +107,39 @@ console.log("hello world");
 
 
 
+window.addEventListener('DOMContentLoaded', () => {
+    const tiles = Array.from(document.querySelectorAll('.tile'));
+    const playerDisplay = document.querySelector('.display-player');
+    const announcer = document.querySelector('.announcer');
+    const resetButton = document.querySelector('#reset');
 
+    let board = ['','','','','','','','',''];
+    let currentPlayer = 'X';
+    let isGamerActive = true,
+
+    const playerX_Won = 'Player_X_Won';
+    const playerO_Won = 'Player_O_Won';
+    const Tie = 'Tie';
+
+    /* 
+    Indexes inside the board
+    [0] [1] [2]
+    [3] [4] [5]
+    [6] [7] [8]
+    */
+
+    const winConditions = [
+        [2, 4, 6],
+        [0, 4, 8],
+        [2, 5, 8],
+        [1, 4, 7],
+        [0, 3, 6],
+        [6, 7, 8],
+        [3, 4, 5],
+        [0, 1, 2]
+    ];
+    
+
+    resetButton.addEventListener('click', resetBoard);
+});
 
