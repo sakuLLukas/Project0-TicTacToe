@@ -115,7 +115,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let board = ['','','','','','','','',''];
     let currentPlayer = 'X';
-    let isGamerActive = true,
+    let isGameActive = true,
 
     const playerX_Won = 'Player_X_Won';
     const playerO_Won = 'Player_O_Won';
@@ -138,7 +138,21 @@ window.addEventListener('DOMContentLoaded', () => {
         [3, 4, 5],
         [0, 1, 2]
     ];
-    
+
+    tiles.forEach( (tile, index) => {
+        tile.addEventListener('click', () => userAction(tile, index));
+    });
+
+    const userAction = (tile, index) => {
+        if (isValidAction(tile) && isGameActive) {
+            tile.innerText = currentPlayer;
+            tile.classlist.add(`player ${ currentPlayer }`);
+            updateBoard(index);
+            handleResultValidation();
+            changePlayer();
+        }
+    }
+
 
     resetButton.addEventListener('click', resetBoard);
 });
