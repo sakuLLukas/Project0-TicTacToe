@@ -125,7 +125,7 @@ window.addEventListener('DOMContentLoaded', () => {
     Indexes inside the board
     [0] [1] [2]
     [3] [4] [5]
-    [6] [7] [8]
+    [6] [7] [8] 
     */
 
     const winConditions = [
@@ -142,7 +142,7 @@ window.addEventListener('DOMContentLoaded', () => {
     function handleResultValidation() {
         let roundWon = false;
         for (let i = 0; i <= 7; i++) {
-            const winCondition = winningConditions[i];
+            const winCondition = winConditions[i];
             const a = board[winCondition[0]];
             const b = board[winCondition[1]];
             const c = board[winCondition[2]];
@@ -167,7 +167,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const announce = (type) => {
         switch(type) {
-            case playerO_Won:
+            case PlayerO_Won:
                 announcer.innerHTML = 'Player <span class="playerO"> O </span> Won';
                 break;
             case PlayerX_Won:
@@ -191,16 +191,16 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     const changePlayer = () =>{
-        playerDisplay.classList.remove(`player ${ currentPlayer }`);
+        playerDisplay.classList.remove(`player${ currentPlayer }`);
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
         playerDisplay.innerText = currentPlayer;
-        playerDisplay.classList.add(`player ${ currentPlayer }`);
+        playerDisplay.classList.add(`player${ currentPlayer }`);
     }
 
     const userAction = (tile, index) => {
         if (isValidAction(tile) && isGameActive) {
             tile.innerText = currentPlayer;
-            tile.classlist.add(`player ${ currentPlayer }`);
+            tile.classList.add(`player${ currentPlayer }`);
             updateBoard(index);
             handleResultValidation();
             changePlayer();
