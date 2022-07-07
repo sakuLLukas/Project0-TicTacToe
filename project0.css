@@ -105,6 +105,6 @@
 .counter {
     position: relative;
     font-size: 30px;
-    bottom: 80px;
+    top: -2.5em;
     background-color: grey;
 }
