@@ -6,7 +6,7 @@
 
 * Easy to use/understand User Interface.
 * Reset Button.
-* Score Counter
+* Score Counter.
 * Player vs Player with no downloads required.
 
 -------------------------------------
