@@ -1,22 +1,24 @@
 @import url(http://allfont.net/allfont.css?fonts=pricedown);
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Secular+One&display=swap');
 
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Pricedown', arial;
+    font-family: 'Pricedown', 'Anton';
+    background-color: grey;
 }
 
 .background {
     background-color: grey;
     height: 100vh;
-    padding-top: 1px;
+    padding-top: 1px;   
 }
 
 .title {
     color: white;
     text-align: center;
     margin-top: 10%;
-    font-size: 40px;
+    font-size: 25px;
 }
 
 .display {
@@ -74,6 +76,35 @@
     border-radius: 8px;
     border: none;
     font-size: 30px;
-    margin-left: 1em;
+    margin-left: 20em;
     cursor: pointer;
+}
+
+#NextGame {
+    background-color: grey;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#xScore {
+    background-color: grey;
+    color: white;
+    text-align: center;
+}
+
+#oScore {
+    background-color: grey;
+    color: white;
+    text-align: center;
+}
+
+.counter {
+    position: relative;
+    font-size: 30px;
+    bottom: 80px;
+    background-color: grey;
 }

@@ -1,73 +1,29 @@
-<!-- EXAMPLE:
+<h1>Tic Tac Toe Game</h1>
 
-# Intro to Markdown
-## Subheading
-### Subsubheading
+*This game was built using HTMl, CSS and Javascript.*
 
-ALternative for h2
+<h2>Features:</h2>
 
-------------------
+* Easy to use/understand User Interface.
+* Reset Button.
+* Score Counter
+* Player vs Player with no downloads required.
 
-Alternative for h1
+-------------------------------------
 
-------------------
-------------------
+You can play [here](https://sakullukas.github.io/Project0-TicTacToe/) with no download required.
 
-Paragraphs are respected
+-------------------------------------
 
-New lines are seperating your paragraphs.
+<h2>RULES FOR TIC-TAC-TOE.</h2>
 
-## Textual Emphasis
+* The game is played on a grid that's 3 squares by 3 squares.
 
-Here is a paragraph with **bold** and *italic* text.
-Also can write _underscore_. Also __bold__.
+* You are X, your friend is O.
 
-Wow this is ***intense***. // bold and italic
+* The first player to get 3 of their marks in a row (up, down, across, or diagonally) is the winner.
 
-## Lists
+* When all 9 squares are full, the game is over.
 
-- Groucho
-- Harpo
-- Chico
 
-Alternativeely:
-* Groucho
-* Harpo
-* Chico
-
-## Numbered Lists
-1. Groucho
-2. Harpo
-3. Chico
-4. Zeppo
-
-Alternatively:
-
-1. Groucho
-1. Harpo
-1. Chico
-1. Zeppo
- // Both work the same
-
- 
- ## Links
-Links are important! Here is a link to
-[Github](http://www.github.com/).
-
-! [] ()
-
-![Bill Murray](http://www.fillmurray.com/50/50)
-
-## Code
-
-A commonly used variable in the browser is called `document`. See also: `window`, which also crops up a lot. E.g. jQuery uses the `$` variable.
-
-This lets it be displayed a multi line code:
-
-```javascript
-const hey = function () {
-    console.log('hello');
-}
-```
--->
 

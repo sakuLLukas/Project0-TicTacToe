@@ -1,4 +1,4 @@
-console.log("hello world");
+console.log("Testing");
 
 // # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #0: The Game
 
@@ -106,20 +106,49 @@ console.log("hello world");
 // * Any other front-end project that interests you
 
 
-
 window.addEventListener('DOMContentLoaded', () => {
     const tiles = Array.from(document.querySelectorAll('.tile'));
     const playerDisplay = document.querySelector('.display-player');
     const announcer = document.querySelector('.announcer');
     const resetButton = document.querySelector('#reset');
 
+    // variables for the board and if a player is currently choosing a grid. Also if the game is 'active'.
+
     let board = ['','','','','','','','',''];
     let currentPlayer = 'X';
     let isGameActive = true;
 
+    // variables for each player winning or a draw.
+
     const PlayerX_Won = 'Player_X_Won';
     const PlayerO_Won = 'Player_O_Won';
     const DRAW = 'Draw';
+
+//     // Keeps score.
+
+//     let scoreOfX = $('#xScore');
+//     let scoreOfO = $('#oScore')
+//     let xScore = 0;
+//     let oScore = 0;
+//     let game = 1;
+
+//   let nextGame = function() {
+//     game = 1;
+//     xScore = 0;
+//     oScore = 0;
+
+//     // displays scores
+//     $(scoreOfX).text(`X - ${xScore}`);
+//     $(scoreOfO).text(`O - ${oScore}`);
+//     $(gameInfo).text(`Game ${game}`);
+//     alert('Game has been reset');
+//   }
+
+//   $("#nextGame").on("click", function() {
+//     reset();
+//     nextGame();
+//   });
+
 
     /* 
     Indexes inside the board
@@ -139,6 +168,7 @@ window.addEventListener('DOMContentLoaded', () => {
         [0, 1, 2]
     ];
 
+    // function for results
     function handleResultValidation() {
         let roundWon = false;
         for (let i = 0; i <= 7; i++) {
@@ -166,7 +196,7 @@ window.addEventListener('DOMContentLoaded', () => {
 }
 
     const announce = (type) => {
-        switch(type) {
+        switch(type) { 
             case PlayerO_Won:
                 announcer.innerHTML = 'Player <span class="playerO"> O </span> Won';
                 break;
@@ -190,6 +220,7 @@ window.addEventListener('DOMContentLoaded', () => {
         board[index] = currentPlayer;
     }
 
+    // changes between whos turn it is X or O
     const changePlayer = () =>{
         playerDisplay.classList.remove(`player${ currentPlayer }`);
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
@@ -207,6 +238,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // when reset button is clicked this resets the board
     const resetBoard = () => {
         board = ['','','','','','','','',''];
         isGameActive = true;
@@ -229,4 +261,3 @@ window.addEventListener('DOMContentLoaded', () => {
 
     resetButton.addEventListener('click', resetBoard);
 });
-
