@@ -112,13 +112,13 @@ window.addEventListener('DOMContentLoaded', () => {
     const announcer = document.querySelector('.announcer');
     const resetButton = document.querySelector('#reset');
 
-    // variables for the board and if a player is currently choosing a grid. Also if the game is 'active'.
+    // variables for the board, player and game.
 
     let board = ['','','','','','','','',''];
     let currentPlayer = 'X';
     let isGameActive = true;
 
-    // variables for each player winning or a draw.
+    // variables for end game state and used to announce end game state
 
     const PlayerX_Won = 'Player_X_Won';
     const PlayerO_Won = 'Player_O_Won';
@@ -157,6 +157,7 @@ window.addEventListener('DOMContentLoaded', () => {
     [6] [7] [8] 
     */
 
+    // stores winning conditions (array of arrays)
     const winConditions = [
         [2, 4, 6],
         [0, 4, 8],
@@ -165,11 +166,11 @@ window.addEventListener('DOMContentLoaded', () => {
         [0, 3, 6],
         [6, 7, 8],
         [3, 4, 5],
-        [0, 1, 2]
+        [0, 1, 2] // first horizontal line of the board 
     ];
 
     // function for results
-    function handleResultValidation() {
+    function handleResultValidation() { // checks if theres a winner or not by looping through win conditions array
         let roundWon = false;
         for (let i = 0; i <= 7; i++) {
             const winCondition = winConditions[i];
@@ -229,9 +230,9 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     const userAction = (tile, index) => {
-        if (isValidAction(tile) && isGameActive) {
-            tile.innerText = currentPlayer;
-            tile.classList.add(`player${ currentPlayer }`);
+        if (isValidAction(tile) && isGameActive) { // checks both and if true 
+            tile.innerText = currentPlayer; // sets innertext to the currentplayer
+            tile.classList.add(`player${ currentPlayer }`); // assigns either O or X depending on the current player
             updateBoard(index);
             handleResultValidation();
             changePlayer();
@@ -256,7 +257,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     tiles.forEach( (tile, index) => {
-        tile.addEventListener('click', () => userAction(tile, index));
+        tile.addEventListener('click', () => userAction(tile, index)); // attaches an eventlistener to every tile
     });
 
     resetButton.addEventListener('click', resetBoard);
