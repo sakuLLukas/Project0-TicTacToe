@@ -1,6 +1,6 @@
 <h1>Tic Tac Toe Game</h1>
 
-*This game was built using HTMl, CSS and Javascript.*
+*This game was built using HTML, CSS and Javascript.*
 
 <h2>Features:</h2>
 
